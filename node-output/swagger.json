@@ -1,12 +1,12 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "This is a sample Petstore server.  You can find \nout more about Swagger at \n[http://swagger.io](http://swagger.io) or on \n[irc.freenode.net, #swagger](http://swagger.io/irc/).\n",
-    "version" : "1.0.2",
-    "title" : "Idea Portal",
+    "description" : "Sharepoint API docs\n[sharepoint](https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service?tabs=csom) \n",
+    "version" : "1.0.3",
+    "title" : "Sharepoint",
     "termsOfService" : "http://swagger.io/terms/",
     "contact" : {
-      "email" : "apiteam@swagger.io"
+      "email" : "a@abc.com"
     },
     "license" : {
       "name" : "Apache 2.0",
@@ -14,8 +14,8 @@
     }
   },
   "tags" : [ {
-    "name" : "pet",
-    "description" : "Everything about your Pets",
+    "name" : "sharepoint",
+    "description" : "what apis we will need",
     "externalDocs" : {
       "description" : "Find out more",
       "url" : "http://swagger.io"
@@ -32,9 +32,9 @@
     }
   } ],
   "paths" : {
-    "/apis/upload" : {
+    "/apis/file" : {
       "post" : {
-        "tags" : [ "upload" ],
+        "tags" : [ "upload_file" ],
         "summary" : "uploads a file to sharepoint database",
         "operationId" : "upFile",
         "consumes" : [ "application/json", "application/xml" ],
@@ -42,6 +42,44 @@
         "responses" : {
           "400" : {
             "description" : "file uploaded successfully"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "get_file" ],
+        "summary" : "get a file from sharepoint database",
+        "operationId" : "getFile",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "400" : {
+            "description" : "file downloaded successfully"
+          }
+        }
+      }
+    },
+    "/apis/folder" : {
+      "post" : {
+        "tags" : [ "create_folder" ],
+        "summary" : "create a file on sharepoint database",
+        "operationId" : "upFolder",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "400" : {
+            "description" : "folder created successfully"
+          }
+        }
+      },
+      "get" : {
+        "tags" : [ "get_folder" ],
+        "summary" : "get a folder from sharepoint database",
+        "operationId" : "getFolder",
+        "consumes" : [ "application/json", "application/xml" ],
+        "produces" : [ "application/json", "application/xml" ],
+        "responses" : {
+          "400" : {
+            "description" : "folder got successfully"
           }
         }
       }
